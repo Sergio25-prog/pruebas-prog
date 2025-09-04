@@ -102,6 +102,6 @@ if (validarUsuario($usuario1) && validarContrasena($contrasena1)) {
 if (validarUsuario($usuario2) && validarContrasena($contrasena2)) {
     echo "Usuario '{$usuario2}' y contraseña son VÁLIDOS. ✅\n";
 } else {
-    echo "Usuario '{$usuario2}' o contraseña son INVÁLIDOS. ❌<br>";
+    echo "Usuario '{$usuario2}' o contraseña son INVÁLIDOS. ❌\n";
 }
 ?>
