@@ -1,25 +1,42 @@
 <?php
-// Variables escalares: Contienen un solo valor.
-$escalar_entero = 10; // Variable entera
-$escalar_flotante = 10.5; // Variable flotante
-$escalar_cadena = "Hola, mundo"; // Variable de cadena
-$escalar_booleano = true; // Variable booleana
+// cadena original
 
-echo "Variables escalares:\n";
-echo "Entero: $escalar_entero\n";
-echo "Flotante: $escalar_flotante\n";
-echo "Cadena: $escalar_cadena\n";
-echo "Booleano: " . ($escalar_booleano ? 'true' : 'false') . "\n";
+$cadena = "Hola mundo, este es un ejemplo de cómo usar la función strstr en PHP.";
 
-// Variables compuestas: Contienen múltiples valores.
-$arreglo = array(1, 2, 3, 4, 5); // Arreglo
-$objeto = new stdClass();
-$objeto->nombre = "Juan";
-$objeto->edad = 30; // Objeto
+// buscar subcadena
 
-echo "\nVariables compuestas:\n";
-echo "Arreglo: ";
-print_r($arreglo);
-echo "\nObjeto: ";
-print_r($objeto);
+$subcadena = "ejemplo";
+
+$pos = 0;
+
+while (($pos = strpos($cadena, $subcadena, $pos)) !== false) {
+
+    // imprimir texto antes de la subcadena
+
+    $antes = strstr($cadena, $subcadena, true);
+
+    echo $antes . "\n";
+
+    // imprimir subcadena en mayúsculas
+
+    $sub = strtoupper($subcadena);
+
+    echo $sub . "\n";
+
+    // imprimir texto después de la subcadena
+
+    $despues = strstr($cadena, $subcadena);
+
+    $despues = substr($despues, strlen($subcadena));
+
+    echo $despues . "\n";
+
+    // avanzar el puntero de búsqueda
+
+    $pos += strlen($subcadena);
+
+}
+
+
+
 ?>
